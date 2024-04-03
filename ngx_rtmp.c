@@ -635,6 +635,8 @@ ngx_rtmp_optimize_servers(ngx_conf_t *cf, ngx_array_t *ports)
             ls->ipv6only = addr[i].ipv6only;
 #endif
 
+            ls->wildcard = addr[i].wildcard;
+
             mport = ngx_palloc(cf->pool, sizeof(ngx_rtmp_port_t));
             if (mport == NULL) {
                 return NGX_CONF_ERROR;
